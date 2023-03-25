@@ -8,14 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    
+    func scrollingReelView() -> some View{
+        return NavigationView{
+            GeometryReader{geometry in
+                TabView{
+                    ForEach(0..<5){i in
+                        ReelView()
+                    }
+                    .frame(width: geometry.size.width,height: geometry.size.height)
+                    .rotationEffect(.degrees(-90))
+                }
+                .rotationEffect(.degrees(90),anchor: .topLeading)
+                .frame(width: geometry.size.height,height: geometry.size.width)
+                .offset(x: geometry.size.width)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            }
+            .navigationTitle("1Blk Shorts")
         }
-        .padding()
+    }
+    
+    var body: some View {
+        TabView{
+            HomeView().tabItem{
+                Label("Home",systemImage: "house.fill")
+            }
+            ExploreView().tabItem{
+                Label("Explore",systemImage: "magnifyingglass")
+            }
+            UploadView().tabItem{
+                Label("",systemImage: "plus.app")
+            }
+            
+            scrollingReelView().tabItem{
+                Label("Shorts", systemImage: "video")
+            }
+            ProfileView().tabItem{
+                Label("Profile",systemImage: "person.crop.circle")
+            }
+        }
+        .accentColor(Color("BlkOrange"))
+        
     }
 }
 
