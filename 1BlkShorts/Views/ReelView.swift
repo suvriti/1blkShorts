@@ -12,9 +12,14 @@ struct ReelView: View {
     
 //    @State var likeCount:Int
     
-    @State var isLiked = false
     
-    var player = AVPlayer(url: URL(string: "https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761")!)
+    @State var player: AVPlayer
+    
+    @State var isLiked = false
+        
+    @State var reelIndex : Int = 0
+    
+    @Binding var selectedTabItem : Int
     
     func likeBtnPressed(){
         isLiked = !isLiked
@@ -33,7 +38,6 @@ struct ReelView: View {
             VideoPlayer(player: player)
                 .edgesIgnoringSafeArea(.all)
                 .onAppear{
-                    player.play()
                     player.actionAtItemEnd = .none
                     NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
                                         player.seek(to: CMTime.zero)
@@ -81,6 +85,12 @@ struct ReelView: View {
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .lineLimit(2)
+                    .onAppear(perform: {
+                        player.play()
+                    })
+                    .onDisappear(perform: {
+                        player.pause()
+                    })
             }
             .padding(.bottom, 20)
             .frame(maxHeight: .infinity, alignment: .bottom)
@@ -90,7 +100,12 @@ struct ReelView: View {
 }
 
 struct ReelView_Previews: PreviewProvider {
+
+    @State static var selectedItem = 0
+
+    static var videoPlayer = AVPlayer(url: URL(string: "https://hack2023ms-inct.streaming.media.azure.net/451cca72-73c0-4c88-a868-f47eaaa4e043/newYorkFlip-clip.ism/manifest(format=m3u8-cmaf)")!)
+
     static var previews: some View {
-        ReelView()
+        ReelView(player: videoPlayer,selectedTabItem: $selectedItem)
     }
 }

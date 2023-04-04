@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ScrollingReelView: View {
     
+    @State var sel = 0
+    
     var colors : [Color] = [.red, .green, .blue, .black]
+    
+    var videoPlayer = AVPlayer(url: URL(string: "https://hack2023ms-inct.streaming.media.azure.net/451cca72-73c0-4c88-a868-f47eaaa4e043/newYorkFlip-clip.ism/manifest(format=m3u8-cmaf)")!)
     
     
     var body: some View {
@@ -17,7 +22,13 @@ struct ScrollingReelView: View {
         GeometryReader{geometry in
             TabView{
                 ForEach(0..<25){i in
-                    ReelView()
+                    ReelView(player: videoPlayer,selectedTabItem: $sel)
+                        .onAppear(perform: {
+                            videoPlayer.play()
+                        })
+                        .onDisappear(perform: {
+                            videoPlayer.pause()
+                        })
                 }
                 .frame(width: geometry.size.width,height: geometry.size.height)
                 .rotationEffect(.degrees(-90))
