@@ -12,7 +12,6 @@ struct ReelView: View {
     
 //    @State var likeCount:Int
     
-    
     @State var player: AVPlayer
     
     @State var isLiked = false

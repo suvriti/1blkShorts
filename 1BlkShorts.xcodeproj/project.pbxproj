@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1289F229EE586F003C52B6 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E429EE586F003C52B6 /* Camera.swift */; };
+		7D1289F329EE586F003C52B6 /* PhotoAssetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E529EE586F003C52B6 /* PhotoAssetCollection.swift */; };
+		7D1289F429EE586F003C52B6 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E629EE586F003C52B6 /* CameraView.swift */; };
+		7D1289F529EE586F003C52B6 /* PhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E729EE586F003C52B6 /* PhotoAsset.swift */; };
+		7D1289F629EE586F003C52B6 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E829EE586F003C52B6 /* PhotoCollection.swift */; };
+		7D1289F729EE586F003C52B6 /* PhotoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289E929EE586F003C52B6 /* PhotoItemView.swift */; };
+		7D1289F829EE586F003C52B6 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289EA29EE586F003C52B6 /* PhotoView.swift */; };
+		7D1289F929EE586F003C52B6 /* ViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289EB29EE586F003C52B6 /* ViewfinderView.swift */; };
+		7D1289FA29EE586F003C52B6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289EC29EE586F003C52B6 /* DataModel.swift */; };
+		7D1289FB29EE586F003C52B6 /* CameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289ED29EE586F003C52B6 /* CameraApp.swift */; };
+		7D1289FC29EE586F003C52B6 /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289EE29EE586F003C52B6 /* PhotoCollectionView.swift */; };
+		7D1289FD29EE586F003C52B6 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289EF29EE586F003C52B6 /* PhotoLibrary.swift */; };
+		7D1289FE29EE586F003C52B6 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289F029EE586F003C52B6 /* ThumbnailView.swift */; };
+		7D1289FF29EE586F003C52B6 /* CachedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1289F129EE586F003C52B6 /* CachedImageManager.swift */; };
 		7D37476529C4EA4900DCE7B5 /* _BlkShortsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37476429C4EA4900DCE7B5 /* _BlkShortsApp.swift */; };
 		7D37476729C4EA4900DCE7B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37476629C4EA4900DCE7B5 /* ContentView.swift */; };
 		7D37476929C4EA4C00DCE7B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D37476829C4EA4C00DCE7B5 /* Assets.xcassets */; };
@@ -46,6 +60,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D1289E429EE586F003C52B6 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		7D1289E529EE586F003C52B6 /* PhotoAssetCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAssetCollection.swift; sourceTree = "<group>"; };
+		7D1289E629EE586F003C52B6 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		7D1289E729EE586F003C52B6 /* PhotoAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAsset.swift; sourceTree = "<group>"; };
+		7D1289E829EE586F003C52B6 /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
+		7D1289E929EE586F003C52B6 /* PhotoItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoItemView.swift; sourceTree = "<group>"; };
+		7D1289EA29EE586F003C52B6 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		7D1289EB29EE586F003C52B6 /* ViewfinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewfinderView.swift; sourceTree = "<group>"; };
+		7D1289EC29EE586F003C52B6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		7D1289ED29EE586F003C52B6 /* CameraApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraApp.swift; sourceTree = "<group>"; };
+		7D1289EE29EE586F003C52B6 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		7D1289EF29EE586F003C52B6 /* PhotoLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
+		7D1289F029EE586F003C52B6 /* ThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
+		7D1289F129EE586F003C52B6 /* CachedImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageManager.swift; sourceTree = "<group>"; };
 		7D37476129C4EA4900DCE7B5 /* 1BlkShorts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1BlkShorts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D37476429C4EA4900DCE7B5 /* _BlkShortsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BlkShortsApp.swift; sourceTree = "<group>"; };
 		7D37476629C4EA4900DCE7B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +198,7 @@
 		7D37479E29C65BB300DCE7B5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7DFCBF1329EE55F000778129 /* Camera */,
 				7D37479F29C65BDB00DCE7B5 /* VideoView.swift */,
 				7D3747A129CCC80F00DCE7B5 /* ScrollingReelView.swift */,
 				7D3747A329CE53A600DCE7B5 /* CategoriesView.swift */,
@@ -177,6 +206,27 @@
 				7D3747A729CF9ED200DCE7B5 /* VideoGrid.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		7DFCBF1329EE55F000778129 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7D1289F129EE586F003C52B6 /* CachedImageManager.swift */,
+				7D1289E429EE586F003C52B6 /* Camera.swift */,
+				7D1289ED29EE586F003C52B6 /* CameraApp.swift */,
+				7D1289E629EE586F003C52B6 /* CameraView.swift */,
+				7D1289EC29EE586F003C52B6 /* DataModel.swift */,
+				7D1289E729EE586F003C52B6 /* PhotoAsset.swift */,
+				7D1289E529EE586F003C52B6 /* PhotoAssetCollection.swift */,
+				7D1289E829EE586F003C52B6 /* PhotoCollection.swift */,
+				7D1289EE29EE586F003C52B6 /* PhotoCollectionView.swift */,
+				7D1289E929EE586F003C52B6 /* PhotoItemView.swift */,
+				7D1289EF29EE586F003C52B6 /* PhotoLibrary.swift */,
+				7D1289EA29EE586F003C52B6 /* PhotoView.swift */,
+				7D1289F029EE586F003C52B6 /* ThumbnailView.swift */,
+				7D1289EB29EE586F003C52B6 /* ViewfinderView.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,19 +360,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1289F629EE586F003C52B6 /* PhotoCollection.swift in Sources */,
 				7D37479C29C6562200DCE7B5 /* CommentSheetView.swift in Sources */,
 				7D37479929C6335600DCE7B5 /* ExploreView.swift in Sources */,
+				7D1289FB29EE586F003C52B6 /* CameraApp.swift in Sources */,
 				7D3747A229CCC80F00DCE7B5 /* ScrollingReelView.swift in Sources */,
 				7D37479129C5E67C00DCE7B5 /* ReelView.swift in Sources */,
 				7D3747A829CF9ED200DCE7B5 /* VideoGrid.swift in Sources */,
 				7D37479529C632F200DCE7B5 /* UploadView.swift in Sources */,
 				7D37479329C632E100DCE7B5 /* HomeView.swift in Sources */,
+				7D1289F829EE586F003C52B6 /* PhotoView.swift in Sources */,
 				7D37476729C4EA4900DCE7B5 /* ContentView.swift in Sources */,
+				7D1289FE29EE586F003C52B6 /* ThumbnailView.swift in Sources */,
+				7D1289FF29EE586F003C52B6 /* CachedImageManager.swift in Sources */,
+				7D1289F729EE586F003C52B6 /* PhotoItemView.swift in Sources */,
+				7D1289F529EE586F003C52B6 /* PhotoAsset.swift in Sources */,
+				7D1289FD29EE586F003C52B6 /* PhotoLibrary.swift in Sources */,
 				7D3747A029C65BDB00DCE7B5 /* VideoView.swift in Sources */,
 				7D3747A429CE53A600DCE7B5 /* CategoriesView.swift in Sources */,
+				7D1289F329EE586F003C52B6 /* PhotoAssetCollection.swift in Sources */,
+				7D1289F429EE586F003C52B6 /* CameraView.swift in Sources */,
+				7D1289F929EE586F003C52B6 /* ViewfinderView.swift in Sources */,
+				7D1289F229EE586F003C52B6 /* Camera.swift in Sources */,
 				7D37479729C6333A00DCE7B5 /* ProfileView.swift in Sources */,
+				7D1289FC29EE586F003C52B6 /* PhotoCollectionView.swift in Sources */,
 				7D37476529C4EA4900DCE7B5 /* _BlkShortsApp.swift in Sources */,
 				7D3747A629CF953B00DCE7B5 /* ProfileCard.swift in Sources */,
+				7D1289FA29EE586F003C52B6 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,9 +545,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"1BlkShorts/Preview Content\"";
-				DEVELOPMENT_TEAM = V2XK96SJYL;
+				DEVELOPMENT_TEAM = Q4XSHAXPPL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Allow access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access to Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -494,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "returnNull.-BlkShorts";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackrock.aladdin.oneBlackRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -510,9 +577,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"1BlkShorts/Preview Content\"";
-				DEVELOPMENT_TEAM = V2XK96SJYL;
+				DEVELOPMENT_TEAM = Q4XSHAXPPL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Allow access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access to Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -523,7 +593,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "returnNull.-BlkShorts";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackrock.aladdin.oneBlackRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

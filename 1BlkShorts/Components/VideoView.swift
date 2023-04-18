@@ -10,12 +10,13 @@ import AVKit
 
 struct VideoView: View {
     
-    var player = AVPlayer(url: URL(string: "https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761")!)
+    var player : AVPlayer
     
     var body: some View {
         VideoPlayer(player: player)
             .edgesIgnoringSafeArea(.all)
             .onAppear{
+                player.isMuted = true
                 player.play()
                 player.actionAtItemEnd = .none
                 NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
@@ -27,7 +28,10 @@ struct VideoView: View {
 }
 
 struct VideoView_Previews: PreviewProvider {
+    
+    static var avPlayer = AVPlayer(url: URL(string: "https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761")!)
+    
     static var previews: some View {
-        VideoView()
+        VideoView(player: avPlayer)
     }
 }

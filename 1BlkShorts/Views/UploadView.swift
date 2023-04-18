@@ -8,13 +8,143 @@
 import SwiftUI
 
 struct UploadView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @StateObject private var model = DataModel()
+    
+    @Binding var selectedTab : Int
+ 
+    private static let barHeightFactor = 0.15
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            GeometryReader { geometry in
+                ViewfinderView(image:  $model.viewfinderImage )
+                    .overlay(alignment: .top) {
+                        Color.black
+                            .opacity(0.75)
+                            .frame(height: geometry.size.height * Self.barHeightFactor)
+                    }
+                    .overlay(alignment: .bottom) {
+                        buttonsView()
+                            .frame(height: geometry.size.height * Self.barHeightFactor)
+                            .background(.black.opacity(0.75))
+                    }
+                    .overlay(alignment: .topTrailing) {
+                        topRightButtonsView()
+                            .frame(height: geometry.size.height * Self.barHeightFactor)
+                            .background(.black.opacity(0.75))
+                    }
+                    .overlay(alignment: .center)  {
+                        Color.clear
+                            .frame(height: geometry.size.height * (1 - (Self.barHeightFactor * 2)))
+                            .accessibilityElement()
+                            .accessibilityLabel("View Finder")
+                            .accessibilityAddTraits([.isImage])
+                    }
+                    .background(.black)
+            }
+            .task {
+                await model.camera.start()
+                await model.loadPhotos()
+                await model.loadThumbnail()
+            }
+            .navigationTitle("Camera")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
+            .ignoresSafeArea()
+            .statusBar(hidden: true)
+        }
+    }
+    
+    private func topRightButtonsView() -> some View{
+        VStack{
+            Button(action: closeCamera, label: {
+                Label("Close", systemImage: "xmark")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.white)
+            })
+        }
+    }
+    
+    private func closeCamera(){
+        self.presentationMode.wrappedValue.dismiss()
+        print("aadaddds")
+        self.selectedTab = 1
+        print("\(selectedTab)")
+    }
+    
+    private func buttonsView() -> some View {
+        HStack(spacing: 60) {
+            
+            Spacer()
+            
+            NavigationLink {
+                PhotoCollectionView(photoCollection: model.photoCollection)
+                    .onAppear {
+                        model.camera.isPreviewPaused = true
+                    }
+                    .onDisappear {
+                        model.camera.isPreviewPaused = false
+                    }
+            } label: {
+                Label {
+                    Text("Gallery")
+                } icon: {
+                    ThumbnailView(image: model.thumbnailImage)
+                }
+            }
+            
+            Button {
+                model.camera.takePhoto()
+            } label: {
+                Label {
+                    Text("Take Photo")
+                } icon: {
+                    ZStack {
+                        Circle()
+                            .strokeBorder(.white, lineWidth: 3)
+                            .frame(width: 62, height: 62)
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 50, height: 50)
+                    }
+                }
+            }
+            
+            Button {
+                model.camera.switchCaptureDevice()
+            } label: {
+                Label("Switch Camera", systemImage: "arrow.triangle.2.circlepath")
+                    .font(.system(size: 36, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            
+            Spacer()
+        
+        }
+        .buttonStyle(.plain)
+        .labelStyle(.iconOnly)
+        .padding()
+    }
+}
+
+fileprivate extension UINavigationBar {
+    
+    static func applyCustomAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 
 struct UploadView_Previews: PreviewProvider {
+    @State static var selectedTab = 1
     static var previews: some View {
-        UploadView()
+        UploadView(selectedTab: $selectedTab)
     }
 }

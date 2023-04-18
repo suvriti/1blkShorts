@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct CategoriesView: View {
+    var avPlayer = AVPlayer(url: URL(string: "https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761")!)
     var columns: [GridItem] = [
           
             GridItem(.fixed(160)),
@@ -21,7 +23,7 @@ struct CategoriesView: View {
                 ZStack(alignment: .topTrailing){
                     TabView() {
                         ForEach(0..<3) { index in
-                            VideoView()
+                            VideoView(player: avPlayer)
                                 .frame(height: 200)
                                 .border(Color.black)
                                 .overlay(Color.black.opacity(0.1))
@@ -47,7 +49,7 @@ struct CategoriesView: View {
                 ZStack(alignment: .topTrailing){
                     TabView() {
                         ForEach(0..<3) { index in
-                            VideoView()
+                            VideoView(player: avPlayer)
                                 .frame(height: 200)
                                 .border(Color.black)
                                 .overlay(Color.black.opacity(0.1))
@@ -72,7 +74,7 @@ struct CategoriesView: View {
                 ZStack(alignment: .topTrailing){
                     TabView() {
                         ForEach(0..<3) { index in
-                            VideoView()
+                            VideoView(player: avPlayer)
                                 .frame(height: 200)
                                 .border(Color.black)
                                 .overlay(Color.black.opacity(0.1))
@@ -98,7 +100,7 @@ struct CategoriesView: View {
                 ZStack(alignment: .topTrailing){
                     TabView() {
                         ForEach(0..<3) { index in
-                            VideoView()
+                            VideoView(player: avPlayer)
                                 .frame(height: 200)
                                 .border(Color.black)
                                 .overlay(Color.black.opacity(0.1))

@@ -13,7 +13,7 @@ struct ContentView: View {
     
     let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "view")
     
-    @State var selectedTab = 0
+    @State private var selectedTab = 1
     
     var videoPlayer = [
         AVPlayer(url: URL(string: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3")!),
@@ -46,14 +46,14 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView{
+        TabView(selection: $selectedTab){
             HomeView().tabItem{
                 Label("Home",systemImage: "house.fill")
             }
             ExploreView().tabItem{
                 Label("Explore",systemImage: "magnifyingglass")
             }
-            UploadView().tabItem{
+            UploadView(selectedTab: $selectedTab).tabItem{
                 Label("",systemImage: "plus.app")
             }
             
