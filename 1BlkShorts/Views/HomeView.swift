@@ -6,7 +6,20 @@
 //
 
 import SwiftUI
+import WebKit
 import AVKit
+
+struct WebView: UIViewRepresentable {
+    let request: URLRequest
+
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
+    }
+}
 
 struct HomeView: View {
     
@@ -23,13 +36,25 @@ struct HomeView: View {
     
     @State var isSheetPresented = false
     
+    @State var url = URL(string: "https://forms.office.com/Pages/ResponsePage.aspx?id=KAKY0MH990Sf-uQXndYjkDS-nKnnvGdEneHjXc3YBWJUOFBQQ0RTS0o4VFRCWElFUzQzRzJLSDhWVy4u&origin=Invitation&channel=0")
+    
+    let customHeaders = ["Authorization": "Basic YW1iYWJiYXI6KG10bnVGTUNvQDIxJSk="]
+    
+    func createCustomRequest() -> URLRequest {
+            var request = URLRequest(url: url!)
+            for (key, value) in customHeaders {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+            return request
+        }
     
     var body: some View {
         NavigationView{
             ScrollView{
                 Text("#happeningThisWeek")
                     .font(.headline)
-                    .frame(alignment: .leading)
+                    .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    .padding(.leading, 20)
                 ScrollView(.horizontal){
                     HStack{
                         Image("image1")
@@ -38,9 +63,10 @@ struct HomeView: View {
                             .border(Color.black)
                             .cornerRadius(10)
                             .sheet(isPresented: $isSheetPresented, content: {
-                                Text("Hello from Sheet")
+                                WebView(request: createCustomRequest())
                             })
                             .onTapGesture {
+                                url = URL(string: "https://forms.office.com/Pages/ResponsePage.aspx?id=KAKY0MH990Sf-uQXndYjkDS-nKnnvGdEneHjXc3YBWJUOFBQQ0RTS0o4VFRCWElFUzQzRzJLSDhWVy4u&origin=Invitation&channel=0")
                                 isSheetPresented = true
                             }
                         Image("image2")
@@ -59,8 +85,8 @@ struct HomeView: View {
                             .sheet(isPresented: $isSheetPresented, content: {
                                 Text("Hello from Sheet")
                             })
-                        
                     }
+                    .padding(.leading, 20)
                 }
                 VStack{
                     ForEach(0..<5) { index in
