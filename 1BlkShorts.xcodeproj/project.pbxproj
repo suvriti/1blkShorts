@@ -40,6 +40,7 @@
 		7D3747A429CE53A600DCE7B5 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3747A329CE53A600DCE7B5 /* CategoriesView.swift */; };
 		7D3747A629CF953B00DCE7B5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3747A529CF953B00DCE7B5 /* ProfileCard.swift */; };
 		7D3747A829CF9ED200DCE7B5 /* VideoGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3747A729CF9ED200DCE7B5 /* VideoGrid.swift */; };
+		7D7F089E29EEDC980086BBF9 /* SwipeReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7F089D29EEDC980086BBF9 /* SwipeReelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		7D3747A329CE53A600DCE7B5 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		7D3747A529CF953B00DCE7B5 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		7D3747A729CF9ED200DCE7B5 /* VideoGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGrid.swift; sourceTree = "<group>"; };
+		7D7F089D29EEDC980086BBF9 /* SwipeReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeReelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				7D37479829C6335600DCE7B5 /* ExploreView.swift */,
 				7D37479029C5E67C00DCE7B5 /* ReelView.swift */,
 				7D37479B29C6562200DCE7B5 /* CommentSheetView.swift */,
+				7D7F089D29EEDC980086BBF9 /* SwipeReelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				7D37479129C5E67C00DCE7B5 /* ReelView.swift in Sources */,
 				7D3747A829CF9ED200DCE7B5 /* VideoGrid.swift in Sources */,
 				7D37479529C632F200DCE7B5 /* UploadView.swift in Sources */,
+				7D7F089E29EEDC980086BBF9 /* SwipeReelView.swift in Sources */,
 				7D37479329C632E100DCE7B5 /* HomeView.swift in Sources */,
 				7D1289F829EE586F003C52B6 /* PhotoView.swift in Sources */,
 				7D37476729C4EA4900DCE7B5 /* ContentView.swift in Sources */,
