@@ -10,7 +10,7 @@ import Foundation
 class MyData: ObservableObject {
     @Published var item = HomeAPIResponse(categories: [
         Category(categoryName: "carrerDevelopmentMonth", videoList: [
-            BlkVideo(audience: "ALL", name: "Career Development Month", description: "Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
+            BlkVideo(audience: "ALL", name: "Career Development Month", description: "Awareness about Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
             BlkVideo(audience: "ALL", name: "Career Development Month", description: "Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
             BlkVideo(audience: "ALL", name: "Career Development Month", description: "Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
             BlkVideo(audience: "ALL", name: "Career Development Month", description: "Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426)
@@ -40,7 +40,7 @@ class MyData: ObservableObject {
     ], latest: [])
     
     init() {
-        fetchData()
+//        fetchData()
     }
     
     let customHeaders = ["Authorization": "Basic bmF2c2luZ2g6U3QzcFVwMTI=",

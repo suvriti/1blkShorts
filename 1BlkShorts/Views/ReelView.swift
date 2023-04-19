@@ -77,10 +77,15 @@ struct ReelView: View {
             .padding(.trailing,10)
             
             VStack(alignment: .leading,spacing:10){
-                Text(">" + title)
-                    .foregroundColor(.white)
-                    .font(.subheadline)
-                    .bold()
+                HStack{
+                    Image(systemName: "doc.plaintext.fill")
+                        .foregroundColor(Color.white)
+                        .padding(.trailing, 4)
+                    Text(title)
+                        .foregroundColor(.white)
+                        .font(.subheadline)
+                        .bold()
+                }
                 Text(description)
                     .foregroundColor(.white)
                     .font(.subheadline)
@@ -91,6 +96,7 @@ struct ReelView: View {
                     .onDisappear(perform: {
                         player.pause()
                     })
+                    .padding(.leading, 5)
             }
             .padding(.bottom, 20)
             .frame(

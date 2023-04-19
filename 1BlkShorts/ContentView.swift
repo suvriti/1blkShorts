@@ -14,6 +14,7 @@ struct ContentView: View {
     let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "view")
     
     @State private var selectedTab = 1
+    @ObservedObject var data  = MyData()
     
     var videoPlayer = [
         AVPlayer(url: URL(string: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3")!),
@@ -47,16 +48,15 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedTab){
-            HomeView().tabItem{
+            HomeView(data : data).tabItem{
                 Label("Home",systemImage: "house.fill")
             }
             ExploreView().tabItem{
                 Label("Explore",systemImage: "magnifyingglass")
             }
-            UploadView(selectedTab: $selectedTab).tabItem{
+            UploadView(selectedTab: $selectedTab,data: data).tabItem{
                 Label("",systemImage: "plus.app")
             }
-            
             scrollingReelView().tabItem{
                 Label("Shorts", systemImage: "video")
             }
@@ -69,8 +69,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

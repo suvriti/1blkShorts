@@ -14,6 +14,8 @@ struct UploadView: View {
     @StateObject private var model = DataModel()
     
     @Binding var selectedTab : Int
+    
+    var data : MyData
  
     private static let barHeightFactor = 0.15
     
@@ -142,9 +144,9 @@ fileprivate extension UINavigationBar {
     }
 }
 
-struct UploadView_Previews: PreviewProvider {
-    @State static var selectedTab = 1
-    static var previews: some View {
-        UploadView(selectedTab: $selectedTab)
-    }
-}
+//struct UploadView_Previews: PreviewProvider {
+//    @State static var selectedTab = 1
+//    static var previews: some View {
+//        UploadView(selectedTab: $selectedTab)
+//    }
+//}
