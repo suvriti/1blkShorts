@@ -9,6 +9,11 @@ import Foundation
 
 class MyData: ObservableObject {
     @Published var item = HomeAPIResponse(categories: [
+         Category(categoryName: "apgAllHands", videoList: [
+            BlkVideo(audience: "ALL", name: "APG All Hands", description: "Lance talks about his views on AI", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/e694476d-08e3-42e0-834d-b9fb8090e10a/APG All Hands Part-1.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
+            BlkVideo(audience: "ALL", name: "APG All Hands", description: "Lance introduces Hackathon", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/a56c39ae-9d0c-4def-878e-c3f69ccfd3e2/APG All Hands Part-2.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165428),
+            BlkVideo(audience: "ALL", name: "APG All Hands", description: "JP talks about BlackRock Academies", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/4c0ff08d-dbb4-45bb-af24-de21982db166/APG All Hands BlackRock Academie.ism/manifest(format=m3u8-cmaf)", url: "", status: "new", timeStamp: 1681842165476)
+        ]),
         Category(categoryName: "carrerDevelopmentMonth", videoList: [
             BlkVideo(audience: "ALL", name: "Career Development Month", description: "Awareness about Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
             BlkVideo(audience: "ALL", name: "Career Development Month", description: "Career Development Month", category: "", m3u8url: "https://hack2023ms-inct.streaming.media.azure.net/dab4ec29-8d9d-4096-b686-5607ed561d7f/fb72b166-3d0c-4e85-a6c1-9c3d5713.ism/manifest(format=m3u8-cmaf)", url: "", status: "approved", timeStamp: 1681842165426),
