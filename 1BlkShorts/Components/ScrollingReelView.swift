@@ -22,7 +22,7 @@ struct ScrollingReelView: View {
         GeometryReader{geometry in
             TabView{
                 ForEach(0..<25){i in
-                    ReelView(player: videoPlayer,selectedTabItem: $sel)
+                    ReelView(title: "title", description : "description", player: videoPlayer,selectedTabItem: $sel)
                         .onAppear(perform: {
                             videoPlayer.play()
                         })

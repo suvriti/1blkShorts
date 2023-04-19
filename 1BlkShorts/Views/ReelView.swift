@@ -10,7 +10,8 @@ import AVKit
 
 struct ReelView: View {
     
-//    @State var likeCount:Int
+    var title : String
+    var description : String
     
     @State var player: AVPlayer
     
@@ -50,18 +51,18 @@ struct ReelView: View {
                         .font(Font.system(.title3).bold())
                         .padding(5)
                 }
-                Text("30.2k")
-                    .foregroundColor(.white)
-                    .font(.headline)
+//                Text("30.2k")
+//                    .foregroundColor(.white)
+//                    .font(.headline)
                 Button(action : commentBtnPressed){
                     Image(systemName:"ellipsis.message.fill")
                         .foregroundColor(.white)
                         .font(Font.system(.title3).bold())
                         .padding(5)
                 }
-                Text("3.2k")
-                    .foregroundColor(.white)
-                    .font(.headline)
+//                Text("3.2k")
+//                    .foregroundColor(.white)
+//                    .font(.headline)
                 Button(action: shareBtnPressed){
                     Image(systemName:"arrowshape.turn.up.right.fill")
                         .foregroundColor(.white)
@@ -76,11 +77,11 @@ struct ReelView: View {
             .padding(.trailing,10)
             
             VStack(alignment: .leading,spacing:10){
-                Text("@craig_love")
+                Text(">" + title)
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .bold()
-                Text("The most satisfying Job The most satisfying JobThe most satisfying JobThe most satisfying Job#fyp #satisfying #roadmarking")
+                Text(description)
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .lineLimit(2)
@@ -92,7 +93,13 @@ struct ReelView: View {
                     })
             }
             .padding(.bottom, 20)
-            .frame(maxHeight: .infinity, alignment: .bottom)
+            .frame(
+                  minWidth: 0,
+                  maxWidth: .infinity,
+                  minHeight: 0,
+                  maxHeight: .infinity,
+                  alignment: .bottomLeading
+                )
             
         }
     }
@@ -105,6 +112,6 @@ struct ReelView_Previews: PreviewProvider {
     static var videoPlayer = AVPlayer(url: URL(string: "https://hack2023ms-inct.streaming.media.azure.net/451cca72-73c0-4c88-a868-f47eaaa4e043/newYorkFlip-clip.ism/manifest(format=m3u8-cmaf)")!)
 
     static var previews: some View {
-        ReelView(player: videoPlayer,selectedTabItem: $selectedItem)
+        ReelView(title: "title", description: "description",player: videoPlayer,selectedTabItem: $selectedItem)
     }
 }

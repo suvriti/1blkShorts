@@ -28,7 +28,7 @@ struct ContentView: View {
             GeometryReader{geometry in
                 TabView(selection: $selectedTab){
                     ForEach(0..<5){i in
-                        ReelView(player: videoPlayer[i],
+                        ReelView(title: "title", description : "description", player: videoPlayer[i],
                                  reelIndex: i,
                         selectedTabItem: $selectedTab)
                         .tag(i)
